@@ -1,10 +1,18 @@
 [
   {
+    "model": "scenarios.expansion",
+    "pk": 1,
+    "fields": {
+      "name": "Memoir '44",
+      "abbreviation": "M44"
+    }
+  },
+  {
     "model": "scenarios.scenario",
     "pk": 1,
     "fields": {
       "name": "Pegasus Bridge",
-      "expansion": "M44",
+      "expansion": ["M44"],
       "number": 1,
       "board": 4
     }
@@ -14,7 +22,7 @@
     "pk": 2,
     "fields": {
       "name": "Sainte Mère-Eglise",
-      "expansion": "M44",
+      "expansion": ["M44"],
       "number": 2,
       "board": 4
     }
