@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{%  static 'core/style.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sora">
+    <meta charset="UTF-8">
+    <title>Tracker '44</title>
+</head>
+<body style="font-family: 'Sora', serif;">
+
+    {% load static %}
+    <header style="text-align: center">
+        <h1>Tracker '44</h1>
+    </header>
+
+    {% block content %}
+
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <p>
+                {{ field.label_tag }}
+                {{ field }}<br>
+                {% if field.help_text %}
+                   <small style="color: grey">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+             </p>
+    {% endfor %}
+    <button type="submit">Sign up</button>
+    </form>
+
+    {% endblock %}
+
+</body>
+</html>
