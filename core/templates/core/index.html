@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{%  static 'core/style.css' %}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sora">
-    <meta charset="UTF-8">
-    <title>Tracker 44</title>
-</head>
-<body style="font-family: 'Sora', serif;">
-    {% load static %}
-    <header style="text-align: center">
-        <h1>Tracker '44</h1>
-    </header>
+{% extends 'core/base.html' %}
+
+{% block content %}
 
     {% if user.is_authenticated %}
         <p>Welcome {{ user.username }}!</p>
@@ -27,7 +16,4 @@
         <div> <a href="https://github.com/Team-2502/WebTimeTracker2"><img class="nav_icon" src="https://ncdn0.daysofwonder.com/memoir44-online/en/img/mo_achievements_deco.png"> </a></div>
     </div>
 
-
-
-</body>
-</html>
+{% endblock %}
