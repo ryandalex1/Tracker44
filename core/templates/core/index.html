@@ -1,19 +1,12 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
 {% block content %}
 
-    {% if user.is_authenticated %}
-        <p>Welcome {{ user.username }}!</p>
-        <a href={% url 'user_profile:logout' %}>Logout</a>
-    {% else %}
-        <a href={% url 'user_profile:sign_up' %}>Register</a><br>
-        <a href={% url 'user_profile:login' %}>Login</a>
-    {% endif %}
-
     <div class="nav_images">
-        <div> <a href="https://github.com/Team-2502/WebTimeTracker2"><img class="nav_icon" src="https://s3.amazonaws.com/illustrativemathematics/images/000/001/398/max/threehexagons_9dffd5d25d8fc4fa1afbae30909781c3.jpg?1346198681"></a></div>
-        <div> <a href="https://github.com/Team-2502/WebTimeTracker2"><img class="nav_icon" src="https://atlas-content-cdn.pixelsquid.com/stock-images/plastic-soldier-army-man-K6rKyyE-600.jpg"></a></div>
-        <div> <a href="https://github.com/Team-2502/WebTimeTracker2"><img class="nav_icon" src="https://ncdn0.daysofwonder.com/memoir44-online/en/img/mo_achievements_deco.png"> </a></div>
+        <div> <a href="https://github.com/Team-2502/WebTimeTracker2"><img class="nav_icon" src="{%  static 'core/images/hex_icon.png' %}"></a></div>
+        <div> <a href="https://github.com/Team-2502/WebTimeTracker2"><img class="nav_icon" src="{%  static 'core/images/dice_icon.png' %}"></a></div>
+        <div> <a href="https://github.com/Team-2502/WebTimeTracker2"><img class="nav_icon" src="{%  static 'core/images/stars_icon.png' %}"> </a></div>
     </div>
 
 {% endblock %}

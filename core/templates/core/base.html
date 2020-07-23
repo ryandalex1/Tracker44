@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <head>
+    {% load static %}
     <link rel="stylesheet" type="text/css" href="{%  static 'core/style.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sora">
     <meta charset="UTF-8">
@@ -9,8 +9,23 @@
 </head>
 <body style="font-family: 'Sora', serif;">
 
-    <header style="text-align: center">
-        <h1>Tracker '44</h1>
+    <header>
+        <h1 style="grid-column-start: 2;">Tracker '44</h1>
+
+        {% if user.is_authenticated %}
+        <div class="user_auth">
+            <a href="https://www.w3schools.com/howto/howto_css_image_overlay.asp">{{ user.username }}</a><br>
+            <a href={% url 'user_profile:logout' %}>Logout</a>
+        </div>
+
+        {% else %}
+            <div class="user_auth">
+                <a href={% url 'user_profile:login' %}>Login</a><br>
+                <a href={% url 'user_profile:sign_up' %}>Register</a>
+            </div>
+
+        {% endif %}
+
     </header>
 
     {% block content %}
