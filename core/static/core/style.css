@@ -25,7 +25,7 @@ h1 {
 header {
     line-height: 1.3;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 6fr 2fr;
     grid-auto-rows: auto;
     align-items: center;
 }
@@ -56,21 +56,26 @@ a{
 }
 a:visited{color: #444}
 
-.row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    font-family: "4077th", serif;
-    font-size: 60px;
+.expansion_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 300px;
     align-items: center;
 }
 
 .column {
-    flex-basis: 100%;
+    font-family: "4077th", serif;
+    font-size: 75px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('images/hex_outline.png') no-repeat center;
+    background-size: auto 100%;
 }
 
-@media screen and (min-width: 800px) {
-    .column {
-        flex: 1;
-    }
+@media screen and (max-width: 800px) {
+  .expansion_grid {
+    grid-template-columns: 1fr;
+  }
 }
