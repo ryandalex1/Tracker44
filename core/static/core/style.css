@@ -1,3 +1,11 @@
+@font-face {
+    font-family: '4077th';
+    src: url('fonts/4077th/4077th.woff2') format('woff2'),
+         url('fonts/4077th/4077th.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background-color: #EEEEEE;
     color: #444;
@@ -9,7 +17,9 @@ body {
 }
 
 h1 {
+    font-family: "4077th", serif;
     font-size: 60px;
+    color: #444;
 }
 
 header {
@@ -20,15 +30,13 @@ header {
     align-items: center;
 }
 
-.user_auth {
-}
-
 .nav_images {
     align-items: center;
     justify-content: center;
     margin: 0 -30px;
     display: flex;
     flex-direction: row;
+    font-family: "4077th", serif;
 }
 
 .nav_icon {
