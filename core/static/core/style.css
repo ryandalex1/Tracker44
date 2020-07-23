@@ -36,6 +36,7 @@ header {
     margin: 0 -30px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     font-family: "4077th", serif;
 }
 
@@ -54,3 +55,22 @@ a{
     color: #444;
 }
 a:visited{color: #444}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: "4077th", serif;
+    font-size: 60px;
+    align-items: center;
+}
+
+.column {
+    flex-basis: 100%;
+}
+
+@media screen and (min-width: 800px) {
+    .column {
+        flex: 1;
+    }
+}

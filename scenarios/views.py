@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def expansion_list(request):
+    return render(request, 'scenarios/expansion_list.html')
