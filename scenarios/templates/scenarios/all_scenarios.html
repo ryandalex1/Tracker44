@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      {% load static %}
+      <link rel="stylesheet" type="text/css" href=http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css>
+      <link rel="stylesheet" type="text/css" href=http://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css>
+      <link rel="stylesheet" type="text/css" href="{%  static 'core/style.css' %}">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sora">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Tracker '44</title>
+  </head>
+  <body>
+    <header>
+        <h1 style="grid-column-start: 2;">TRACKER '44</h1>
+
+        {% if user.is_authenticated %}
+            <div class="user_auth">
+              <a href="https://www.w3schools.com/howto/howto_css_image_overlay.asp">{{ user.username }}</a><br>
+              <a href={% url 'user_profile:logout' %}>Logout</a>
+            </div>
+
+        {% else %}
+            <div class="user_auth">
+                <a href={% url 'user_profile:login' %}>Login</a><br>
+                <a href={% url 'user_profile:sign_up' %}>Register</a>
+            </div>
+
+        {% endif %}
+
+    </header>
+
+    <br>
+
+    <table id="example" class="table table-striped table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th>Scenario</th>
+            <th>Expansion</th>
+            <th>Date</th>
+            <th>Number</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Pegasus Bridge</td>
+            <td>Memoir 44</td>
+            <td>June 6, 1944</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Sainte Mere Eglise</td>
+            <td>Memoir 44</td>
+            <td>June 9, 1944</td>
+            <td>2</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <script type="text/javascript" charset="utf8" src= "http://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" charset="utf8" src=http://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js></script>
+    <script type="text/javascript" charset="utf8" src=http://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js></script>
+    <script type="text/javascript" src="{% static 'core/js/initalize_data_tables.js' %}"></script>
+  </body>
+</html>
