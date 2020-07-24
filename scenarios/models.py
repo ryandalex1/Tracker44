@@ -33,10 +33,18 @@ class Scenario(models.Model):
     number = models.CharField(max_length=15)
     date = models.CharField(max_length=25)
 
-    board_types = (
-        (1, "Beach"),
-        (2, "Winter"),
-        (3, "Desert"),
-        (4, "Countryside")
-    )
-    board = models.IntegerField(choices=board_types)
+    class BoardTypes(models.IntegerChoices):
+        COUNTRYSIDE = 1
+        WINTER = 2
+        DESERT = 3
+        BEACH = 4
+
+    board = models.IntegerField(choices=BoardTypes.choices)
+
+    class ScenarioTypes(models.IntegerChoices):
+        STANDARD = 1
+        OVERLORD = 2
+        BREAKTHROUGH = 3
+        BREAKLORD = 4
+
+    scenario_type = models.IntegerField(choices=ScenarioTypes.choices)

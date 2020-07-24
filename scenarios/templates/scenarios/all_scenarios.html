@@ -39,18 +39,37 @@
             <tr>
                 <th>Scenario</th>
                 <th>Expansion</th>
+                <th style="text-align: center">Board</th>
                 <th>Date</th>
                 <th>Number</th>
             </tr>
             </thead>
         <tbody>
         {% for scenario in scenarios %}
+            {% if scenario.get_scenario_type_display == 'Overlord' %}
+            <tr class="table-danger">
+            {% elif scenario.get_scenario_type_display == 'Breaktrough'%}
+            <tr class="table-warning">
+            {% elif scenario.get_scenario_type_display == 'Breaklord'%}
+            <tr class="table-info">
+            {% else %}
             <tr>
+            {% endif %}
+
                 <td>{{  scenario.name }} </td>
                 {% if scenario.sub_expansion %}
                     <td>{{ scenario.expansion.name }} - {{ scenario.sub_expansion.name }} </td>
                 {% else %}
                     <td>{{ scenario.expansion.name }}</td>
+                {% endif %}
+                {% if scenario.get_board_display == 'Countryside' %}
+                    <td style="text-align: center"><img src="{% static 'core/images/green_hex_icon_small.png' %}"></td>
+                {% elif scenario.get_board_display == 'Winter' %}
+                    <td style="text-align: center"><img src="{% static 'core/images/white_hex_icon_small.png' %}"></td>
+                {% elif scenario.get_board_display == 'Desert' %}
+                    <td style="text-align: center"><img src="{% static 'core/images/brown_hex_icon_small.png' %}"></td>
+                {% elif scenario.get_board_display == 'Beach' %}
+                    <td style="text-align: center"><img src="{% static 'core/images/beach_hex_icon_small.png' %}"></td>
                 {% endif %}
                 <td>{{ scenario.date }}</td>
                 <td>{{ scenario.number }}</td>
