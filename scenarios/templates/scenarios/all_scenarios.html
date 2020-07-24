@@ -33,34 +33,36 @@
 
     <br>
 
-    <table id="example" class="table table-striped table-bordered">
-        <thead class="thead-dark">
-        <tr>
-            <th>Scenario</th>
-            <th>Expansion</th>
-            <th>Date</th>
-            <th>Number</th>
-        </tr>
-        </thead>
+    <div class="table-responsive">
+        <table id="example" class="table table-striped table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>Scenario</th>
+                <th>Expansion</th>
+                <th>Date</th>
+                <th>Number</th>
+            </tr>
+            </thead>
         <tbody>
-        <tr>
-            <td>Pegasus Bridge</td>
-            <td>Memoir 44</td>
-            <td>June 6, 1944</td>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td>Sainte Mere Eglise</td>
-            <td>Memoir 44</td>
-            <td>June 9, 1944</td>
-            <td>2</td>
-        </tr>
+        {% for scenario in scenarios %}
+            <tr>
+                <td>{{  scenario.name }} </td>
+                {% if scenario.sub_expansion %}
+                    <td>{{ scenario.expansion.name }} - {{ scenario.sub_expansion.name }} </td>
+                {% else %}
+                    <td>{{ scenario.expansion.name }}</td>
+                {% endif %}
+                <td>{{ scenario.date }}</td>
+                <td>{{ scenario.number }}</td>
+            </tr>
+        {% endfor%}
         </tbody>
     </table>
+    </div>
 
     <script type="text/javascript" charset="utf8" src= "http://code.jquery.com/jquery-3.5.1.js"></script>
     <script type="text/javascript" charset="utf8" src=http://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js></script>
     <script type="text/javascript" charset="utf8" src=http://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js></script>
-    <script type="text/javascript" src="{% static 'core/js/initalize_data_tables.js' %}"></script>
+    <script type="text/javascript" src="{% static 'core/js/initialize_data_tables.js' %}"></script>
   </body>
 </html>
