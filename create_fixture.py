@@ -2,7 +2,7 @@ import csv
 import json
 
 expansions = []
-with open('expansions.csv', newline='') as file:
+with open('expansions.csv', newline='', encoding='utf-8-sig') as file:
     reader = csv.reader(file)
     pk = 1
     for row in reader:
@@ -18,12 +18,12 @@ with open('expansions.csv', newline='') as file:
         pk += 1
 
 sub_expansions = []
-with open('sub_expansions.csv', newline='') as file:
+with open('sub_expansions.csv', newline='', encoding='utf-8-sig') as file:
     reader = csv.reader(file)
     pk = 1
     for row in reader:
         scenario = {
-            "model": "scenarios.sub_expansion",
+            "model": "scenarios.subexpansion",
             "pk": pk,
             "fields": {
                 "name": row[0],
@@ -35,7 +35,7 @@ with open('sub_expansions.csv', newline='') as file:
         pk += 1
 
 scenarios = []
-with open('scenarios.csv', newline='') as file:
+with open('scenarios.csv', newline='', encoding='utf-8-sig') as file:
     reader = csv.reader(file)
     pk = 1
     for row in reader:
@@ -48,9 +48,12 @@ with open('scenarios.csv', newline='') as file:
                 "sub_expansion": [row[2]],
                 "number": row[3],
                 "board": row[4],
-                "scenario_type": row[5]
+                "scenario_type": row[5],
+                "date": row[6]
             }
         }
+        if row[2] is '':
+            scenario['fields']['sub_expansion'] = None
         scenarios.append(scenario)
         pk += 1
 
