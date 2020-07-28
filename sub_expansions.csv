@@ -3,15 +3,15 @@ Unternehem Fall Gelb,UFG,CB1
 Operation Barbarossa,OB,CB1
 Island Hoppers,IH,CB2
 Break Through Normandy,BTN,CB2
-The Vercors Campaign,VC,OC
-Audie Murphy's Campaign,AMC,OC
-The Invasion of Crete,IOC,OC
-Equipment Pack Bonus Scenarios,OP,EPBS
-New Flight Plan Bonus Scenarios,OP,NFPB
-VE-Day Scenarios,OP,VED
-Hedgerow Hell,BM1,HH
-Tigers in the Snow,BM1,TS
-Sword of Stalingrad,BM1,SS
-Disaster at Dieppe,BM1, DD
-The Battles of Khalkin Gol,BM2,BKG
-Through Jungle and Desert,BM2,TJD
+The Vercors Campaign,VC,PC
+Audie Murphy's Campaign,AMC,PC
+The Invasion of Crete,IOC,PC
+Equipment Pack Bonus Scenarios,EPBS,OP
+New Flight Plan Bonus Scenarios,NFPB,OP
+VE-Day Scenarios,VED,OP
+Hedgerow Hell,HH,BM1
+Tigers in the Snow,TS,BM1
+Sword of Stalingrad,SS,BM1
+Disaster at Dieppe,DD,BM1
+The Battles of Khalkin Gol,BKG,BM2
+Through Jungle and Desert,TJD,BM2
