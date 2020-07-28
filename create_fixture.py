@@ -27,8 +27,8 @@ with open('sub_expansions.csv', newline='', encoding='utf-8-sig') as file:
             "pk": pk,
             "fields": {
                 "name": row[0],
-                "abbreviation": row[1],
-                "parent": [row[2]]
+                "parent": [row[1]],
+                "abbreviation": row[2]
             }
         }
         expansions.append(scenario)
