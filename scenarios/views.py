@@ -7,12 +7,10 @@ def expansion_list(request):
     return render(request, 'scenarios/expansion_list.html')
 
 
-def all_scenarios(request):
-    context = {'scenarios': Scenario.objects.all()}
-    return render(request, 'scenarios/all_scenarios.html', context)
-
-
 def expansion_scenarios(request, expansion_abbreviation):
-    expansion = get_object_or_404(Expansion, abbreviation=expansion_abbreviation)
-    context = {'scenarios': expansion.scenario_set.all()}
-    return render(request, 'scenarios/all_scenarios.html', context)
+    if expansion_abbreviation == 'all':
+        context = {'scenarios': Scenario.objects.all(), 'title': 'ALL SCENARIOS'}
+    else:
+        expansion = get_object_or_404(Expansion, abbreviation=expansion_abbreviation)
+        context = {'scenarios': expansion.scenario_set.all(), 'title': expansion.name.upper()}
+    return render(request, 'scenarios/scenario_list.html', context)
