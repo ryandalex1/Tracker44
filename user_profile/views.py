@@ -3,6 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
 
 from user_profile.forms import SignUpForm
+from user_profile.models import UserProfile
 
 
 def sign_up(request):
@@ -11,6 +12,8 @@ def sign_up(request):
     if request.method == "POST":
         if form.is_valid():
             user = form.save()
+            user_profile = UserProfile(user=user)
+            user_profile.save()
             login(request, user)
             return redirect('index')
     context['form'] = form
@@ -44,7 +47,7 @@ def profile(request):
     if not request.user.is_authenticated:
         return redirect('user_profile:login')
     else:
-        return render(request, "profile.html")
+        return render(request, "profile.html", {'profile': UserProfile.objects.get(user=request.user)})
 
 
 def log_play(request):
