@@ -38,3 +38,10 @@ def login_user(request):
     form = AuthenticationForm()
     context['form'] = form
     return render(request, "registration/login.html", context)
+
+
+def profile(request):
+    if not request.user.is_authenticated:
+        return redirect('user_profile:login')
+    else:
+        return render(request, "profile.html")

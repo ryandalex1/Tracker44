@@ -15,7 +15,7 @@
 
         {% if user.is_authenticated %}
         <div class="user_auth">
-            <a href="https://www.w3schools.com/howto/howto_css_image_overlay.asp">{{ user.username }}</a><br>
+            <a href="{% url 'user_profile:profile' %}">{{ user.username }}</a><br>
             <a href={% url 'user_profile:logout' %}>Logout</a>
         </div>
 
