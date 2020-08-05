@@ -31,6 +31,15 @@ class UserProfile(models.Model):
                 expansions_completed.append(expansion)
         return expansions_completed
 
+    def get_list_expansions_uncompleted(self):
+        expansions_uncompleted = []
+        for expansion in Expansion.objects.all():
+            expansion_plays = len(self.loggedplay_set.filter(scenario__expansion=expansion))
+            expansion_scenarios = len(expansion.scenario_set.all())
+            if expansion_plays != expansion_scenarios:
+                expansions_uncompleted.append(expansion.name + " (" + str(expansion_plays) + "/" + str(expansion_scenarios) + ")")
+        return expansions_uncompleted
+
 
 class LoggedPlay(models.Model):
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)

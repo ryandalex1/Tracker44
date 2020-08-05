@@ -2,23 +2,37 @@
 {% load static %}
 
 {% block content %}
-    <p>{{ profile.user.username }}</p>
-    <a href="https://google.com" style="text-decoration: underline; color: #444">Change Password</a><br><br>
+<div style="text-align: center">
 
-    <p> Scenarios Played </p>
-    <p>{{ profile.scenarios_played }} / 640 </p><br>
-
-    <p style="text-decoration: underline">Expansions Completed</p>
-    {% for expansion in profile.get_list_expansions_completed %}
-        <p>{{ expansion.name }}</p>
-    {% endfor %}
-
-    <br>
+    <p class="profile_big_text"> Scenarios Played </p>
+    <hr style="width:200px">
+    <p class="profile_big_text">{{ profile.scenarios_played }} / 640 </p><br>
 
     <p>Scenarios Played Last Week</p>
     <p>{{ profile.get_num_scenarios_last_week }}</p>
     <p>Scenarios Played This Month</p>
     <p>{{ profile.get_num_scenarios_this_month }}</p>
     <p>Scenarios Played This Year</p>
-    <p>{{ profile.get_num_scenarios_this_year }}</p>
+    <p>{{ profile.get_num_scenarios_this_year }}</p><br>
+
+    <p class="profile_big_text">Completed Expansions</p>
+    <hr style="width:300px">
+    {% if profile.get_list_expansions_completed %}
+        {% for expansion in profile.get_list_expansions_completed %}
+            <p>{{ expansion.name }}</p>
+        {% endfor %}
+    {% else %}
+        <p>No expansions completed yet!</p>
+    {% endif %}
+
+    <p class="profile_big_text">Uncompleted Expansions</p>
+    <hr style="width:300px">
+    {% for expansion in profile.get_list_expansions_uncompleted %}
+        <p>{{ expansion }}</p>
+    {% endfor %}
+
+    <br><br>
+
+    <a class="profile_big_text" href="https://google.com" style="text-decoration: underline; color: #444">Change Password</a><br><br>
+</div>
 {% endblock %}

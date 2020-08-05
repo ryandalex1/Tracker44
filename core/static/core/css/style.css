@@ -1,7 +1,7 @@
 @font-face {
     font-family: '4077th';
-    src: url('fonts/4077th/4077th.woff2') format('woff2'),
-         url('fonts/4077th/4077th.woff') format('woff');
+    src: url('../fonts/4077th/4077th.woff2') format('woff2'),
+         url('../fonts/4077th/4077th.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -82,7 +82,7 @@ header a:visited{
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url('images/hex_outline.png') no-repeat center;
+    background: url('../images/hex_outline.png') no-repeat center;
     background-size: auto 100%;
 }
 
@@ -103,6 +103,6 @@ header a:visited{
     border-color: #454d55;
 }
 
-.form {
-
+.profile_big_text {
+    font-size: 30px;
 }
