@@ -45,3 +45,10 @@ def profile(request):
         return redirect('user_profile:login')
     else:
         return render(request, "profile.html")
+
+
+def log_play(request):
+    if not request.user.is_authenticated:
+        return redirect('user_profile:login')
+    else:
+        return render(request, "play_entry.html")

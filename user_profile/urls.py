@@ -13,5 +13,7 @@ urlpatterns = [
     # /user_profile/login
     path('login/', user_profile.views.login_user, name="login"),
     # /user_profile/profile
-    path('profile/', user_profile.views.profile, name="profile")
+    path('profile/', user_profile.views.profile, name="profile"),
+    # /user_profile/log_play
+    path('log_play/', user_profile.views.log_play, name="log_play")
 ]
