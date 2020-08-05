@@ -4,75 +4,75 @@
 {% block content %}
     {% load static %}
     <div class = "expansion_grid">
-        <div class="column" >
+        <div class="expansion" >
 
-            <p class="expansion_text"> ALL </p>
+            <a href="{% url 'scenarios:expansion_scenarios' 'all' %}"> ALL </a>
         </div>
-        <div class="column">
-            <p class="expansion_text" style="color: darkgreen"> M44 </p>
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'M44' %}" style="color: darkgreen"> M44 </a>
         </div>
-        <div class="column">
-            <p class="expansion_text" style="color: lightskyblue"> AIR </p>
-        </div>
-
-        <div class="column">
-            <p style="color: tan"> MT </p>
-        </div>
-        <div class="column">
-            <p style="color: dodgerblue"> PT </p>
-        </div>
-        <div class="column">
-            <p style="color: darkred"> EF </p>
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'AIR' %}" style="color: lightskyblue"> AIR </a>
         </div>
 
-        <div class="column">
-            <p style="color: lightgreen"> TP </p>
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'MT' %}" style="color: tan"> MT </a>
         </div>
-        <div class="column">
-            <p style="color: cornflowerblue" > WW </p>
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'PT' %}" style="color: dodgerblue"> PT </a>
         </div>
-        <div class="column">
-            <p style="color: darkgrey"> EP </p>
-        </div>
-
-        <div class="column">
-            <p style="color: darkgreen"> DDL </p>
-        </div>
-        <div class="column">
-            <p style="color: darkorange"> BT </p>
-        </div>
-        <div class="column">
-            <p style="color: mediumpurple" > NFP </p>
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'EF' %}" style="color: darkred"> EF </a>
         </div>
 
-        <div class="column">
-            <p> CB 1 </p>
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'TP' %}" style="color: lightgreen"> TP </a>
         </div>
-        <div class="column">
-            <p> CB 2 </p>
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'WW' %}" style="color: cornflowerblue" > WW </a>
         </div>
-        <div class="column">
-            <p style="font-size: 40px;"> CAMPAIGN <br> PROMOS </p>
-        </div>
-
-        <div class="column">
-            <p style="font-size: 40px;"> BATTLE<br> MAPS <br> SERIES 1 </p>
-        </div>
-        <div class="column">
-            <p style="font-size: 40px;"> BATTLE<br> MAPS <br> SERIES 2 </p>
-        </div>
-        <div class="column">
-            <p style="font-size: 45px;"> OTHER <br> PROMOS </p>
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'EP' %}" style="color: darkgrey"> EP </a>
         </div>
 
-        <div class="column">
-            <p style="font-size: 45px;"> FRENCH <br> OPEN </p>
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'DDL' %}" style="color: darkgreen"> DDL </a>
         </div>
-        <div class="column">
-            <p style="font-size: 45px;"> DUTCH <br> OPEN </p>
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'BT' %}" style="color: darkorange"> BT </a>
         </div>
-        <div class="column">
-            <p style="font-size: 60px;"> OTHER  </p>
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'NFP' %}" style="color: mediumpurple" > NFP </a>
+        </div>
+
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'CB1' %}"> CB 1 </a>
+        </div>
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'CB2' %}"> CB 2 </a>
+        </div>
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'PC' %}" style="font-size: 40px;"> CAMPAIGN <br> PROMOS </a>
+        </div>
+
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'BM1' %}" style="font-size: 40px;"> BATTLE<br> MAPS <br> SERIES 1 </a>
+        </div>
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'BM2' %}" style="font-size: 40px;"> BATTLE<br> MAPS <br> SERIES 2 </a>
+        </div>
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'OP' %}" style="font-size: 45px;"> OTHER <br> PROMOS </a>
+        </div>
+
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'FO' %}" style="font-size: 45px;"> FRENCH <br> OPEN </a>
+        </div>
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'DO' %}" style="font-size: 45px;"> DUTCH <br> OPEN </a>
+        </div>
+        <div class="expansion">
+            <a href="{% url 'scenarios:expansion_scenarios' 'O' %}" style="font-size: 60px;"> OTHER  </a>
         </div>
     </div>
 
