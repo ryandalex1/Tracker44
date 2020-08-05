@@ -12,6 +12,8 @@ urlpatterns = [
     path('logout/', user_profile.views.logout_user, name="logout"),
     # /user_profile/login
     path('login/', user_profile.views.login_user, name="login"),
+    # /user_profile/change_password
+    path('change_password/', user_profile.views.change_password, name="change_password"),
     # /user_profile/profile
     path('profile/', user_profile.views.profile, name="profile"),
     # /user_profile/log_play
